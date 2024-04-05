@@ -1,0 +1,102 @@
+﻿@model Dropdoen2.Models.Drop
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    foreach (var s in Model.Gender)
+    {
+        <label>
+            @Html.RadioButtonFor(model => model.Id, Model.Gender, s.Value)@s.Text
+
+        </label>
+    }
+    <br />
+    <input type="submit" value="Submit" />
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample MVC Frontend</title>
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sample MVC Frontend</h1>
+    </header>
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="~/Content/CBSE Class 10 Toppers of Madhava Kripa School, Manipal.jpg" alt="Sample Image">
+                </div>
+                <h2>Image 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="grid-item">
+                <div class="image-container">
+                    <img src="~/Content/Play.jpg" alt="Sample Image">
+                </div>
+                <h2>Image 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
